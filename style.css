@@ -1,0 +1,108 @@
+:root {
+  --special-color-dark: hsla(180, 48%, 52%, 0.2);
+  --special-color-light: hsl(180, 48%, 52%);
+  --background-color: #222;
+  --text-color: #fff;
+}
+
+::selection {
+  background-color: var(--special-color-light);
+}
+
+body {
+  font-family: sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  padding-left: 0.5rem;
+  margin-bottom: 3rem;
+  font-size: 2rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--special-color-dark);
+  color: var(--text-color);
+  border: 1px solid var(--special-color-light);
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: var(--special-color-light);
+}
+
+.icon {
+  margin-left: 4px;
+  width: 1.5rem;
+}
+
+.section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.text {
+  flex: 1;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-top: 3rem;
+  padding: 2rem;
+  z-index: 1;
+}
+
+.buttons {
+  padding-left: 2rem;
+}
+
+.image {
+  flex: 1;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  border: 1px solid var(--special-color-light);
+  opacity: 0.8;
+  transition: 100ms ease-in-out;
+}
+
+.image:hover {
+  opacity: 1;
+  filter: none;
+}
+
+.left {
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.right {
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
