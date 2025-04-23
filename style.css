@@ -106,3 +106,7 @@ button:hover {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
+
+#waves {
+  width: 100vw;
+}
