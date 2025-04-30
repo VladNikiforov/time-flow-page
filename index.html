@@ -2,40 +2,49 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>TimeFlow Page</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <h1>TimeFlow</h1>
+    <h1 class="hidden-on-load">TimeFlow</h1>
 
     <div class="section">
         <div>
-            <div class="text">
-                View your web activity with this minimalistic, productivity focused browser extension
+            <div class="text">View your web activity with this minimalistic, productivity focused browser extension
             </div>
             <div class="buttons">
-                <a href="https://addons.mozilla.org/en-US/firefox/addon/timeflow/" target="_blank"><button>Get it on <img class="icon"
-                            src="assets/browser/firefox.png"></button></a>
-                <a><button>Coming soon on <img class="icon"
-                            src="assets/browser/chrome.png"></button></a>
+                <a href="https://addons.mozilla.org/en-US/firefox/addon/timeflow/" target="_blank"><button>Get it on
+                        <img class="icon" src="assets/browser/firefox.png" /></button></a>
+                <a><button>Coming soon on <img class="icon" src="assets/browser/chrome.png" /></button></a>
             </div>
         </div>
-        <img src="assets/screenshots/1.png" class="image right">
+        <img src="assets/screenshots/1.png" class="image right" />
     </div>
+
+    <div style="height: 3rem;"></div>
 
     <div class="section reverse">
         <div class="text">
-            Free, open source, private. Data is fully locally stored
+            <div style="margin-bottom: 1rem">
+                • Free <br />
+                • Open Source * <br />
+                • Private <br />
+            </div>
+            <div style="font-size: 1rem">* The extension will be officially published on GitHub after releasing on both
+                Chrome & Firefox</div>
         </div>
-        <img src="assets/screenshots/2.png" class="image left">
+
+        <img src="assets/screenshots/2.png" class="image left" />
     </div>
 
-    <img id="waves" src="assets/waves.svg">
+    <pre id="wave"></pre>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
