@@ -1,15 +1,33 @@
-const numRows = 7
-const bufferRows = 2
-const numCols = Math.round(window.innerWidth / 8)
+
+// Responsive wave settings (adjust based on viewport width)
+let numRows
+let bufferRows
+let numCols
 const charColor = 'hsl(180, 48%, 52%)'
 
-const baseWaveAmplitude = 2
-const waveFrequency = 0.08
-const waveSpeed = 0.02
+let baseWaveAmplitude
+let waveFrequency
+let waveSpeed
+
+function computeSettings() {
+  const w = window.innerWidth
+  const isMobile = w <= 767
+
+  numRows = isMobile ? 5 : 7
+  bufferRows = isMobile ? 1 : 2
+  // use a slightly larger divisor on mobile so characters don't overflow
+  numCols = Math.max(20, Math.round(w / (isMobile ? 10 : 8)))
+
+  baseWaveAmplitude = isMobile ? 1.2 : 2
+  waveFrequency = isMobile ? 0.12 : 0.08
+  waveSpeed = isMobile ? 0.035 : 0.02
+}
 
 const waveElement = document.getElementById('wave')
 
 let phaseShift = 0
+
+computeSettings()
 
 let symbolGrid = Array(numRows)
   .fill()
@@ -21,12 +39,12 @@ let bufferGrid = Array(bufferRows)
   .fill()
   .map(() => Array(numCols).fill(''))
 
-const words = 'timeflow'.split(' ')
+const words = ['timeflow']
 let currentWord = ''
 let wordIndex = 0
 let charIndex = 0
 
-const fps = 15
+const fps = 18
 const frameInterval = 1000 / fps
 let lastFrameTime = 0
 
@@ -89,7 +107,9 @@ function updateWave(timestamp) {
 }
 
 function resizeGrids() {
-  numCols = Math.round(window.innerWidth / 8)
+  // Recompute responsive settings and resize the grids
+  computeSettings()
+
   symbolGrid = Array(numRows)
     .fill()
     .map(() => Array(numCols).fill(''))

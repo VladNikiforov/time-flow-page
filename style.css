@@ -139,3 +139,89 @@ button:hover {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Mobile improvements */
+@media (max-width: 767px) {
+  body {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-left: 0;
+  }
+
+  .section {
+    padding: 0;
+    gap: 1rem;
+  }
+
+  .section > div {
+    width: 100%;
+  }
+
+  .text {
+    font-size: 1.125rem;
+    margin-top: 0.5rem;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: stretch;
+    padding-left: 0;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  .icon {
+    width: 1.25rem;
+    margin-left: 8px;
+  }
+
+  .image {
+    width: 100%;
+    max-width: 420px;
+    margin: 0.75rem auto 0 auto;
+    border-radius: 0.5rem;
+  }
+
+  /* Hide screenshots and the bullet-point section on small screens */
+  .image {
+    display: none;
+  }
+
+  .section.reverse {
+    display: none;
+  }
+
+  pre {
+    margin-top: 2rem;
+    font-size: 0.95rem;
+  }
+
+  /* Tidy the ASCII wave on small screens */
+  pre {
+    text-align: center;
+    line-height: 0.9;
+    letter-spacing: 0.06rem;
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .hidden-on-load {
+    text-align: center;
+  }
+}
